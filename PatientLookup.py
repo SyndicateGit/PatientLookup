@@ -29,15 +29,15 @@ class Patient:  # Patient class
         self.mrn = mrn
         self.dob = dob
         self.history = history
-
-    def calculate_age(self):  # This function calculates patient's age based on dob (dd-mm-yyyy) and current date
-        dob_day, dob_month, dob_year = self.dob.split("-")
-        age = current_year - int(dob_year) - ((current_month, current_day) < (int(dob_month), int(dob_day)))
-        # If current,month date < dob month,date subtract 1 from age^
-        if age < 0:
-            return "Error: Age out of bound"
-        return age
+        self.age = calculate_age(dob)
 
 
+def calculate_age(dob):  # This function calculates patient's age based on dob (dd-mm-yyyy) and current date
+    dob_day, dob_month, dob_year = dob.split("-")
+    age = current_year - int(dob_year) - ((current_month, current_day) < (int(dob_month), int(dob_day)))
+    # If current,month date < dob month,date subtract 1 from age^
+    if age < 0:
+        return "Error: Age out of bound"
+    return age
 
 
