@@ -2,7 +2,7 @@
 Unit Testing for MedicalFiles
 """
 import unittest
-import MedicalFiles  # Module we want to test
+import PatientLookup  # Module we want to test
 class TestMedicalFiles(unittest.TestCase):
     """
     TestCase class provides assert methods to check for and report failures.
